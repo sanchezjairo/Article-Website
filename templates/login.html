@@ -1,32 +1,23 @@
-<!doctype html>
-
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>Login Page</title>
-
-</head>
-
-<body>
-    <form action="action_page.php" method="post">      
-        <div class="container">
-          <label for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
-      
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-      
-          <button type="submit">Login</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
-        </div>
-      
-        <div class="container" style="background-color:#f1f1f1">
-          <button type="button" class="cancelbtn">Cancel</button>
-          <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
+<html>
+  <head>
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Please login</h1>
+      <br>
+      <form action="" method="post">
+        <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}">
+         <input type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}">
+        <input class="btn btn-default" type="submit" value="Login">
       </form>
-</body>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
 </html>
