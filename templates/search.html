@@ -1,17 +1,30 @@
 
 <html>
   <head>
-    <title>Search Page</title>
+    <title>Article Finder</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+     <link rel ="stylesheet" href="stylesheet.css">
   </head>
-<form action="" method="POST">
-    <label for="article">Search for article or keywords</label>
-    <input type="text" placeholder="Search" name="search" value="{{ request.form.get.search }}">
-    <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-{% if error %}
-    <p class="error"><strong>Error:</strong> {{ error }}
-{% endif %}
-</body>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1">Navbar</span>
+    </nav>
+    <div class="container">
+      <h1>Article search</h1>
+      <br>
+      <form action="" method="post">
+        <label for="article">Search for article or keywords</label>
+        <input type="text" placeholder="Search" name="search" value="{{ request.form.get.search }}">
+        <input class="btn btn-primary" type="submit" value="Search">
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
 </html>

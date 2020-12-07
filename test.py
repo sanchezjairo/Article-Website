@@ -23,7 +23,7 @@ def search():
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != 'a' or request.form['password'] != 'a':
+        if request.form['username'] != '' or request.form['password'] != '':
             error = 'Invalid Credentials. Please try again.'
         else:
             return redirect(url_for('search'))
