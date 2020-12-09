@@ -8,23 +8,37 @@
   
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   
-     <link rel ="stylesheet" href="stylesheet.css">
+     <link rel="stylesheet" href="/static/stylesheet.css">
   </head>
-  <body>
-    <nav class="navbar navbar-light bg-light">
-      <span class="navbar-brand mb-0 h1">Navbar</span>
+  <body class="searchbody">
+    <nav class="navbar">
+      <span class="navbar-brand mb-0 h1">Article Search</span>
     </nav>
-    <div class="container">
-      <h1>Article search</h1>
-      <br>
-      <form action="" method="post">
-        <label for="article">Search for article or keywords</label>
-        <input type="text" placeholder="Search" name="search" value="{{ request.form.get.search }}">
-        <input class="btn btn-primary" type="submit" value="Search">
-      </form>
-      {% if error %}
-        <p class="error"><strong>Error:</strong> {{ error }}
-      {% endif %}
-    </div>
+    <div id="cover-caption">
+      <div class="container-fluid">
+       <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+        <h1 class="display-4 py-2 text-truncate"></h1>
+         <form action=""  class="justify-content-center form2" method="POST">
+          <div class="form-group">
+           <label class="sr-only">Search</label>
+           <h1 class="display-4 py-2 text-truncate">Search</h1>
+           <input type="text" class="form-control" name="search" placeholder="Search keyword or article" value="{{request.form.get.search}}">
+         </div>
+           <button type="submit" class="btn btn-primary btn-lg">Search</button>
+          </form>
+          {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }}
+          {% endif %}
+          <div class="">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div style = "position:fixed; left:60px; top:500px;" class="container Quotes justify-content-center">
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias fugit nostrum earum culpa quisquam repellendus neque molestias, delectus commodi illum adipisci, qui cupiditate exercitationem officia eveniet quidem porro numquam illo. - someone</p>
+      </div>
+      <div class="p-5 text-white footer fixed-bottom">
+        &copy; 2020 Article Search inc.
+      </div>
   </body>
 </html>
