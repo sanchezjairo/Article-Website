@@ -47,3 +47,13 @@ nav.navbar {
   background-color: #FFB234;
   color: black;
 }
+
+.resultsbody{
+  background-color: #FE9F01;
+}
+.card {
+  border: 2px;
+}
+.modal-backdrop{
+  background-color: darkgoldenrod;
+}
